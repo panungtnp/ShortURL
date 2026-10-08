@@ -68,3 +68,4 @@ curl -i localhost:3001/rAJMO   # 302 → https://www.synerry.com
 - `GET /api/links/check?code=` → ตรวจ alias ว่างหรือไม่
 - `GET /api/links/:id/stats` → ยอดรวม + รายวัน 30 วัน + คลิกล่าสุด 20 รายการ
 # ShortLink
+# ShortURL

@@ -41,6 +41,17 @@ async function initDb() {
 
 app.get('/health', (req, res) => res.json({ ok: true }));
 
+// Friendly root so opening the API URL in a browser doesn't show "Cannot GET /".
+app.get('/', (req, res) =>
+  res.json({
+    name: 'short-url API',
+    health: '/health',
+    create: 'POST /api/links',
+    redirect: 'GET /:code',
+    docs: 'https://github.com — see README',
+  })
+);
+
 app.use('/api/links', linksRouter);
 
 // GET /:code — redirect + count the click

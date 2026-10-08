@@ -1,0 +1,14 @@
+flowchart LR
+  User[ผู้ใช้]
+  System((Short URL System))
+  Links[(D1: Links)]
+  Clicks[(D2: Clicks)]
+
+  User -->|URL ปลายทาง, alias, วันหมดอายุ| System
+  System -->|Short URL, QR payload| User
+  User -->|เปิด short URL| System
+  System -->|ปลายทาง redirect 302 / สถานะ 404 หรือ 410| User
+  User -->|ขอประวัติและสถิติ| System
+  System -->|รายการลิงก์และ click metrics| User
+  System -->|บันทึกและอ่านลิงก์| Links
+  System -->|บันทึกและอ่าน click events| Clicks

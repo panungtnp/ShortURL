@@ -1,0 +1,26 @@
+flowchart TB
+  subgraph Client["Client"]
+    Browser["Browser / Mobile camera & QR scanner"]
+    WebApp["React SPA (Vite) — Home / History / Stats"]
+  end
+
+  subgraph Backend["Backend (Node.js + Express)"]
+    CreateAPI["POST /api/links — create + validate + unique code"]
+    ManageAPI["GET /api/links · /check · /:id/stats"]
+    Redirect["GET /:code — lookup, expiry check, log click, 302"]
+  end
+
+  DB[("PostgreSQL — links 1:N clicks")]
+
+  Browser -->|"scan / open short URL"| Redirect
+  WebApp -->|"JSON over HTTPS"| CreateAPI
+  WebApp -->|"JSON over HTTPS"| ManageAPI
+  CreateAPI -->|"INSERT links"| DB
+  ManageAPI -->|"SELECT links + clicks"| DB
+  Redirect -->|"SELECT links"| DB
+  Redirect -->|"INSERT clicks"| DB
+  Redirect -->|"302 long_url (404 / 410 on error)"| Browser
+
+  note["Future microservice split: Redirect path and Manage API can deploy as separate services sharing the same DB"]
+  Redirect -.-> note
+  ManageAPI -.-> note

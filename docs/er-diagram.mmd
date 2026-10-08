@@ -1,0 +1,17 @@
+erDiagram
+  LINKS ||--o{ CLICKS : "has many" {
+    int id PK
+    text code "UNIQUE, short code / alias"
+    text long_url "original destination URL"
+    boolean is_alias "true if user-defined"
+    timestamptz expires_at "nullable"
+    timestamptz created_at
+  }
+  CLICKS {
+    int id PK
+    int link_id FK "-> LINKS.id ON DELETE CASCADE"
+    timestamptz clicked_at
+    text ip "nullable, truncated /64"
+    text user_agent "nullable, truncated /512"
+    text referrer "nullable, truncated /1024"
+  }

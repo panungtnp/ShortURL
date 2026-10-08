@@ -1,3 +1,8 @@
+![DFD Level 0](docs/dfd-level0.png)
+![ER Diagram](docs/er-diagram.png)
+![Architecture](docs/architecture.png)
+
+
 # Short URL — Synerry Developer Test
 
 ระบบย่อ URL พร้อม QR Code, ประวัติการสร้าง และสถิติการคลิก

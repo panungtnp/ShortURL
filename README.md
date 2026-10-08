@@ -14,7 +14,7 @@ Stack: **Node.js (Express) + React (Vite) + PostgreSQL**
 - API health check: https://shorturl-c4su.onrender.com/health
 - Authentication: ไม่มี — เป็น public demo เข้าใช้งานได้เลย
 
-> เปลี่ยน `<ชื่อ-render-service>` เป็นชื่อ service จริงบน Render ของคุณก่อนส่งงาน
+
 
 ## ฟีเจอร์ตามเกณฑ์
 
@@ -80,5 +80,4 @@ curl -i localhost:3001/rAJMO   # 302 → https://www.synerry.com
 - `GET /api/links?q=&limit=` → ประวัติพร้อมยอดคลิก
 - `GET /api/links/check?code=` → ตรวจ alias ว่างหรือไม่
 - `GET /api/links/:id/stats` → ยอดรวม + รายวัน 30 วัน + คลิกล่าสุด 20 รายการ
-# ShortLink
-# ShortURL
+

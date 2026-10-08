@@ -11,7 +11,7 @@ Stack: **Node.js (Express) + React (Vite) + PostgreSQL**
 ## Live Demo
 
 - Web application: https://short-url-seven-bice.vercel.app
-- API health check: https://<ชื่อ-render-service>.onrender.com/health
+- API health check: https://shorturl-c4su.onrender.com/health
 - Authentication: ไม่มี — เป็น public demo เข้าใช้งานได้เลย
 
 > เปลี่ยน `<ชื่อ-render-service>` เป็นชื่อ service จริงบน Render ของคุณก่อนส่งงาน
